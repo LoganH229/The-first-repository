@@ -38,8 +38,12 @@ Partial Class Form1
         Me.Button10 = New System.Windows.Forms.Button()
         Me.Button11 = New System.Windows.Forms.Button()
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
+        Me.TrackBar2 = New System.Windows.Forms.TrackBar()
+        Me.TrackBar3 = New System.Windows.Forms.TrackBar()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TrackBar2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TrackBar3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PictureBox1
@@ -52,7 +56,7 @@ Partial Class Form1
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(687, 191)
+        Me.Button1.Location = New System.Drawing.Point(679, 190)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(26, 25)
         Me.Button1.TabIndex = 1
@@ -157,7 +161,7 @@ Partial Class Form1
         '
         'Button11
         '
-        Me.Button11.Location = New System.Drawing.Point(721, 191)
+        Me.Button11.Location = New System.Drawing.Point(711, 191)
         Me.Button11.Name = "Button11"
         Me.Button11.Size = New System.Drawing.Size(70, 24)
         Me.Button11.TabIndex = 13
@@ -167,11 +171,29 @@ Partial Class Form1
         'SaveFileDialog1
         '
         '
+        'TrackBar2
+        '
+        Me.TrackBar2.Location = New System.Drawing.Point(687, 248)
+        Me.TrackBar2.Maximum = 100
+        Me.TrackBar2.Name = "TrackBar2"
+        Me.TrackBar2.Size = New System.Drawing.Size(104, 45)
+        Me.TrackBar2.TabIndex = 14
+        '
+        'TrackBar3
+        '
+        Me.TrackBar3.Location = New System.Drawing.Point(687, 299)
+        Me.TrackBar3.Maximum = 100
+        Me.TrackBar3.Name = "TrackBar3"
+        Me.TrackBar3.Size = New System.Drawing.Size(104, 45)
+        Me.TrackBar3.TabIndex = 15
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(880, 487)
+        Me.Controls.Add(Me.TrackBar3)
+        Me.Controls.Add(Me.TrackBar2)
         Me.Controls.Add(Me.Button11)
         Me.Controls.Add(Me.Button10)
         Me.Controls.Add(Me.Button9)
@@ -190,6 +212,8 @@ Partial Class Form1
         Me.Text = "Form1"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TrackBar2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TrackBar3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -211,4 +235,6 @@ Partial Class Form1
     Friend WithEvents Button10 As Button
     Friend WithEvents Button11 As Button
     Friend WithEvents SaveFileDialog1 As SaveFileDialog
+    Friend WithEvents TrackBar2 As TrackBar
+    Friend WithEvents TrackBar3 As TrackBar
 End Class
