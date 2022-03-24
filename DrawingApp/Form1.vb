@@ -3,6 +3,7 @@
     Dim m_shapes As New Collection
     Dim c As Color
     Dim w As Integer
+    Dim type As String
 
 
     Private Sub pictureBox1_MouseDown(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseDown
@@ -12,15 +13,21 @@
 
     Private Sub pictureBox1_MouseMove(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseMove
         If m_Previous IsNot Nothing Then
-            Dim l As New MyRect(PictureBox1.Image, m_Previous, e.Location)
-            l.w = TrackBar2.Value
-            l.h = TrackBar3.Value
-            '<<<<<<< Updated upstream
-            l.Pen = New Pen(c, w)
-            '=======
-            'l.Draw(red)
-            '>>>>>>> Stashed changes
-            m_shapes.Add(l)
+            Dim d As Object
+            d = New MyRect(PictureBox1.Image, m_Previous, e.Location)
+            d.Pen = New Pen(c, w)
+            If type = "Line" Then
+                d = New Line(PictureBox1.Image, m_Previous, e.Location)
+                d.Pen = New Pen(c, w)
+            End If
+            If type = "Rectangle" Then
+                d = New MyRect(PictureBox1.Image, m_Previous, e.Location)
+                d.Pen = New Pen(c, w)
+
+            End If
+            d.w = TrackBar2.Value
+            d.h = TrackBar3.Value
+            m_shapes.Add(d)
             PictureBox1.Invalidate()
             m_Previous = e.Location
         End If
@@ -45,6 +52,7 @@
             s.Draw()
         Next
     End Sub
+
 
     '<<<<<<< Updated upstream
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -115,6 +123,12 @@
     '    '=======
     '>>>>>>> Stashed changes
     '>>>>>>> Stashed changes
+    Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        type = "Line"
+    End Sub
+    Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        type = "Rectangle"
+    End Sub
 End Class
 
 
