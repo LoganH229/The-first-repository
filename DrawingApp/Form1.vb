@@ -25,6 +25,11 @@
                 d.Pen = New Pen(c, w)
 
             End If
+            If type = "ellipse" Then
+                d = New MyRect(PictureBox1.Image, m_Previous, e.Location)
+                d.Pen = New Pen(c, w)
+
+            End If
             d.w = TrackBar2.Value
             d.h = TrackBar3.Value
             m_shapes.Add(d)
@@ -129,6 +134,12 @@
     Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button4.Click
         type = "Rectangle"
     End Sub
+
+    Private Sub Button14_Click(sender As Object, e As EventArgs) Handles Button14.Click
+        type = "ellipse"
+    End Sub
+
+
 End Class
 
 
