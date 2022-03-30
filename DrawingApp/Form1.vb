@@ -12,30 +12,62 @@
     End Sub
 
     Private Sub pictureBox1_MouseMove(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseMove
+
         If m_Previous IsNot Nothing Then
             Dim d As Object
+
             d = New MyRect(PictureBox1.Image, m_Previous, e.Location)
             d.Pen = New Pen(c, w)
             If type = "Line" Then
                 d = New Line(PictureBox1.Image, m_Previous, e.Location)
                 d.Pen = New Pen(c, w)
+                d.w = TrackBar2.Value
+                d.h = TrackBar3.Value
             End If
             If type = "Rectangle" Then
                 d = New MyRect(PictureBox1.Image, m_Previous, e.Location)
                 d.Pen = New Pen(c, w)
-
+                d.w = TrackBar2.Value
+                d.h = TrackBar3.Value
             End If
-            If type = "ellipse" Then
-                d = New MyRect(PictureBox1.Image, m_Previous, e.Location)
+            If type = "polygon" Then
+                d = New polygon(PictureBox1.Image, m_Previous, e.Location)
                 d.Pen = New Pen(c, w)
+                d.w = TrackBar2.Value
+                d.h = TrackBar3.Value
+            End If
+            If type = "Arc" Then
+                d = New Arc(PictureBox1.Image, m_Previous, e.Location)
+                d.Pen = New Pen(c, w)
+                d.w = TrackBar2.Value
+                d.h = TrackBar3.Value
+            End If
+            If type = "Pentagon" Then
+                d = New Pentagon(PictureBox1.Image, m_Previous, e.Location)
+                d.Pen = New Pen(c, w)
+                d.w = TrackBar2.Value
+                d.h = TrackBar3.Value
+            End If
+            If type = "nGon" Then
+                d = New nGon(PictureBox1.Image, m_Previous, e.Location)
+                d.Pen = New Pen(c, w)
+                d.sides = Trackbar4.Value
+                d.raduis = Trackbar5.Value
 
             End If
-            d.w = TrackBar2.Value
-            d.h = TrackBar3.Value
+            If type = "Picture" Then
+                d = New PBox(PictureBox1.Image, m_Previous, e.Location)
+                d.picture = PictureBox2.Image
+                d.w = TrackBar2.Value
+                d.h = TrackBar3.Value
+            End If
+
+
             m_shapes.Add(d)
             PictureBox1.Invalidate()
             m_Previous = e.Location
         End If
+
     End Sub
 
     Private Sub pictureBox1_MouseUp(sender As Object, e As MouseEventArgs) Handles PictureBox1.MouseUp
@@ -139,7 +171,36 @@
         type = "ellipse"
     End Sub
 
+    Private Sub Button17_Click(sender As Object, e As EventArgs) Handles Button17.Click
+        type = "Arc"
+    End Sub
 
+    Private Sub Button16_Click(sender As Object, e As EventArgs) Handles Button16.Click
+        type = "polygon"
+    End Sub
+
+    Private Sub Button15_Click(sender As Object, e As EventArgs) Handles Button15.Click
+        SaveFileDialog1.ShowDialog()
+    End Sub
+    'picturebox1.image.save(savefiledialog1.filename
+    Private Sub Button19_Click(sender As Object, e As EventArgs) Handles Button19.Click
+        type = "Pentagon"
+    End Sub
+
+    Private Sub Button20_Click(sender As Object, e As EventArgs) Handles Button20.Click
+        type = "nGon"
+    End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        type = "Picture"
+    End Sub
+
+    Private Sub Button21_Click(sender As Object, e As EventArgs) Handles Button21.Click
+        OpenFileDialog1.ShowDialog()
+    End Sub
+    Private Sub OpenFileDialog1_FileOk(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles OpenFileDialog1.FileOk
+        PictureBox2.Load(OpenFileDialog1.FileName)
+    End Sub
 End Class
 
 

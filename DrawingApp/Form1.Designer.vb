@@ -43,16 +43,28 @@ Partial Class Form1
         Me.Button12 = New System.Windows.Forms.Button()
         Me.Button13 = New System.Windows.Forms.Button()
         Me.Button14 = New System.Windows.Forms.Button()
-        Me.Button15 = New System.Windows.Forms.Button()
         Me.Button16 = New System.Windows.Forms.Button()
         Me.Button17 = New System.Windows.Forms.Button()
         Me.Button18 = New System.Windows.Forms.Button()
-        Me.TrackBar4 = New System.Windows.Forms.TrackBar()
+        Me.Button15 = New System.Windows.Forms.Button()
+        Me.SaveFileDialog2 = New System.Windows.Forms.SaveFileDialog()
+        Me.SaveFileDialog3 = New System.Windows.Forms.SaveFileDialog()
+        Me.SaveFileDialog4 = New System.Windows.Forms.SaveFileDialog()
+        Me.SaveFileDialog5 = New System.Windows.Forms.SaveFileDialog()
+        Me.Button19 = New System.Windows.Forms.Button()
+        Me.Button20 = New System.Windows.Forms.Button()
+        Me.Trackbar4 = New System.Windows.Forms.TrackBar()
+        Me.Trackbar5 = New System.Windows.Forms.TrackBar()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.Button21 = New System.Windows.Forms.Button()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrackBar2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TrackBar3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TrackBar4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Trackbar4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Trackbar5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PictureBox1
@@ -223,18 +235,9 @@ Partial Class Form1
         Me.Button14.Text = "Circle"
         Me.Button14.UseVisualStyleBackColor = True
         '
-        'Button15
-        '
-        Me.Button15.Location = New System.Drawing.Point(754, 388)
-        Me.Button15.Name = "Button15"
-        Me.Button15.Size = New System.Drawing.Size(54, 45)
-        Me.Button15.TabIndex = 19
-        Me.Button15.Text = "Polygon"
-        Me.Button15.UseVisualStyleBackColor = True
-        '
         'Button16
         '
-        Me.Button16.Location = New System.Drawing.Point(754, 439)
+        Me.Button16.Location = New System.Drawing.Point(754, 388)
         Me.Button16.Name = "Button16"
         Me.Button16.Size = New System.Drawing.Size(54, 45)
         Me.Button16.TabIndex = 20
@@ -243,7 +246,7 @@ Partial Class Form1
         '
         'Button17
         '
-        Me.Button17.Location = New System.Drawing.Point(694, 439)
+        Me.Button17.Location = New System.Drawing.Point(814, 388)
         Me.Button17.Name = "Button17"
         Me.Button17.Size = New System.Drawing.Size(54, 45)
         Me.Button17.TabIndex = 21
@@ -259,24 +262,88 @@ Partial Class Form1
         Me.Button18.Text = "Pie"
         Me.Button18.UseVisualStyleBackColor = True
         '
-        'TrackBar4
+        'Button15
         '
-        Me.TrackBar4.Location = New System.Drawing.Point(555, 437)
-        Me.TrackBar4.Maximum = 100
-        Me.TrackBar4.Name = "TrackBar4"
-        Me.TrackBar4.Size = New System.Drawing.Size(104, 45)
-        Me.TrackBar4.TabIndex = 23
+        Me.Button15.Location = New System.Drawing.Point(12, 437)
+        Me.Button15.Name = "Button15"
+        Me.Button15.Size = New System.Drawing.Size(54, 45)
+        Me.Button15.TabIndex = 23
+        Me.Button15.Text = "Save"
+        Me.Button15.UseVisualStyleBackColor = True
+        '
+        'Button19
+        '
+        Me.Button19.Location = New System.Drawing.Point(694, 439)
+        Me.Button19.Name = "Button19"
+        Me.Button19.Size = New System.Drawing.Size(54, 45)
+        Me.Button19.TabIndex = 24
+        Me.Button19.Text = "Pentagon"
+        Me.Button19.UseVisualStyleBackColor = True
+        '
+        'Button20
+        '
+        Me.Button20.Location = New System.Drawing.Point(105, 447)
+        Me.Button20.Name = "Button20"
+        Me.Button20.Size = New System.Drawing.Size(90, 21)
+        Me.Button20.TabIndex = 25
+        Me.Button20.Text = "nGon"
+        Me.Button20.UseVisualStyleBackColor = True
+        '
+        'Trackbar4
+        '
+        Me.Trackbar4.LargeChange = 3
+        Me.Trackbar4.Location = New System.Drawing.Point(212, 439)
+        Me.Trackbar4.Maximum = 20
+        Me.Trackbar4.Name = "Trackbar4"
+        Me.Trackbar4.Size = New System.Drawing.Size(104, 45)
+        Me.Trackbar4.TabIndex = 26
+        '
+        'Trackbar5
+        '
+        Me.Trackbar5.Location = New System.Drawing.Point(322, 437)
+        Me.Trackbar5.Maximum = 100
+        Me.Trackbar5.Name = "Trackbar5"
+        Me.Trackbar5.Size = New System.Drawing.Size(104, 45)
+        Me.Trackbar5.TabIndex = 27
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.WindowsApplication1.My.Resources.Resources.dog_1
+        Me.PictureBox2.Location = New System.Drawing.Point(794, 273)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(74, 58)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 28
+        Me.PictureBox2.TabStop = False
+        '
+        'Button21
+        '
+        Me.Button21.Location = New System.Drawing.Point(814, 220)
+        Me.Button21.Name = "Button21"
+        Me.Button21.Size = New System.Drawing.Size(42, 47)
+        Me.Button21.TabIndex = 29
+        Me.Button21.Text = "..."
+        Me.Button21.UseVisualStyleBackColor = True
+        '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(880, 487)
-        Me.Controls.Add(Me.TrackBar4)
+        Me.Controls.Add(Me.Button21)
+        Me.Controls.Add(Me.PictureBox2)
+        Me.Controls.Add(Me.Trackbar5)
+        Me.Controls.Add(Me.Trackbar4)
+        Me.Controls.Add(Me.Button20)
+        Me.Controls.Add(Me.Button19)
+        Me.Controls.Add(Me.Button15)
         Me.Controls.Add(Me.Button18)
         Me.Controls.Add(Me.Button17)
         Me.Controls.Add(Me.Button16)
-        Me.Controls.Add(Me.Button15)
         Me.Controls.Add(Me.Button14)
         Me.Controls.Add(Me.Button13)
         Me.Controls.Add(Me.Button12)
@@ -302,7 +369,9 @@ Partial Class Form1
         CType(Me.TrackBar1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TrackBar2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TrackBar3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TrackBar4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Trackbar4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Trackbar5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -329,9 +398,19 @@ Partial Class Form1
     Friend WithEvents Button12 As Button
     Friend WithEvents Button13 As Button
     Friend WithEvents Button14 As Button
-    Friend WithEvents Button15 As Button
     Friend WithEvents Button16 As Button
     Friend WithEvents Button17 As Button
     Friend WithEvents Button18 As Button
-    Friend WithEvents TrackBar4 As TrackBar
+    Friend WithEvents Button15 As Button
+    Friend WithEvents SaveFileDialog2 As SaveFileDialog
+    Friend WithEvents SaveFileDialog3 As SaveFileDialog
+    Friend WithEvents SaveFileDialog4 As SaveFileDialog
+    Friend WithEvents SaveFileDialog5 As SaveFileDialog
+    Friend WithEvents Button19 As Button
+    Friend WithEvents Button20 As Button
+    Friend WithEvents Trackbar4 As TrackBar
+    Friend WithEvents Trackbar5 As TrackBar
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents Button21 As Button
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
 End Class

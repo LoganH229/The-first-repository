@@ -14,12 +14,8 @@
     End Sub
     Public Sub Draw()
         Using g As Graphics = Graphics.FromImage(m_image)
-            Dim points(2) As Point
-            points(0) = New Point(m_a.X, m_a.Y)
-            points(1) = New Point(m_a.X, m_a.Y + w)
-            points(2) = New Point(m_a.X + h, m_a.Y)
-            g.DrawPolygon(Pen, points)
-            'g.DrawRectangle(Pen, m_a.X, m_a.Y, w, h)
+
+            g.DrawRectangle(Pen, m_a.X, m_a.Y, w, h)
             'g.DrawArc(Pen, m_a.X, m_a.Y, 50, 100, 0, 90)
             'g.DrawPie(Pen, m_a.X, m_a.Y, 74, 100, 0, 90)
 
